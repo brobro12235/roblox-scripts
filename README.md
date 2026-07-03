@@ -1,12 +1,12 @@
 # Roblox Scripts
 
-Personal Roblox executor scripts and tools. Use with **Potassium** (or any executor with `HttpGet` + `loadstring`).
+Public Roblox executor scripts. Use with **Potassium** (or any executor with `HttpGet` + `loadstring`).
 
-Replace `YOUR_USERNAME` with your GitHub username in the URLs below.
+Replace `brobro12235` with your GitHub username.
 
 ---
 
-## Loadstring — game scripts
+## Loadstring
 
 ### Sell Lemons — Ethan's Lemons
 
@@ -14,10 +14,38 @@ Replace `YOUR_USERNAME` with your GitHub username in the URLs below.
 **Menu:** Right Shift
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USERNAME/roblox-scripts/main/scripts/sell-lemons/ethans_lemons.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/brobro12235/roblox-scripts/main/scripts/sell-lemons/ethans_lemons.lua"))()
 ```
 
 Features: Auto Buy, Auto Upgrade, Auto Collect Fruits, Auto Phone Offer, themes, unload.
+
+---
+
+## Upload to GitHub (first time)
+
+1. [github.com/new](https://github.com/new) → name **`roblox-scripts`** → **Public**
+2. Don't add README / .gitignore (this folder already has them)
+3. Push:
+
+```powershell
+cd "C:\Users\ethan\.cursor\r6_external\tools\roblox\roblox-scripts"
+git remote add origin https://github.com/brobro12235/roblox-scripts.git
+git push -u origin main
+```
+
+---
+
+## Updating a script
+
+Edit in `tools/roblox/`, sync to this repo, then push:
+
+```powershell
+cd "C:\Users\ethan\.cursor\r6_external\tools\roblox\roblox-scripts"
+.\sync.ps1
+git add .
+git commit -m "Update ethans_lemons"
+git push
+```
 
 ---
 
@@ -25,48 +53,26 @@ Features: Auto Buy, Auto Upgrade, Auto Collect Fruits, Auto Phone Offer, themes,
 
 | File | Description |
 |------|-------------|
-| `learning/visual_ui_learn.lua` | Visual UI Library tutorial template |
-| `learning/clean_ui_tutorial.lua` | Build a clean menu from scratch (no library) |
-
-Run these directly in your executor (copy/paste or local file). Not meant for loadstring unless you host them.
+| `learning/visual_ui_learn.lua` | Visual UI Library tutorial |
+| `learning/clean_ui_tutorial.lua` | Clean menu from scratch |
 
 ---
 
-## Tools (executor / local)
+## Tools
 
 | File | Description |
 |------|-------------|
-| `tools/game_dumper.lua` | Dump client scripts from a game to workspace |
-| `tools/potassium_saveinstance.lua` | Save game as `.rbxl` for Studio |
-| `tools/potassium_ai_dump.lua` | AI-friendly game dump helper |
-| `tools/copy_dump_to_cursor.ps1` | Copy dump folder into Cursor workspace (Windows) |
+| `tools/game_dumper.lua` | Dump client scripts from a game |
+| `tools/potassium_saveinstance.lua` | Save `.rbxl` for Studio |
+| `tools/potassium_ai_dump.lua` | AI-friendly dump helper |
+| `tools/copy_dump_to_cursor.ps1` | Copy dump into Cursor workspace |
+
+**Do not commit** game dumps (`dumps/`), `.rbxl` files, or decompiled game source.
 
 ---
 
-## Adding a new script
+## Adding another game script
 
-1. Put game scripts under `scripts/<game-name>/your_script.lua`
+1. Add `scripts/<game-name>/your_script.lua`
 2. Add a loadstring block to this README
-3. Commit and push:
-
-```powershell
-cd tools/roblox/roblox-scripts
-git add .
-git commit -m "Add my new script"
-git push
-```
-
-**Do not commit** game dumps (`dumps/`), `.rbxl` files, or decompiled game source — those stay local.
-
----
-
-## Upload to GitHub (first time)
-
-1. Create a new repo at [github.com/new](https://github.com/new) named **`roblox-scripts`** (public, no README)
-2. Push:
-
-```powershell
-cd "C:\Users\ethan\.cursor\r6_external\tools\roblox\roblox-scripts"
-git remote add origin https://github.com/YOUR_USERNAME/roblox-scripts.git
-git push -u origin main
-```
+3. `git add` → `commit` → `push`
